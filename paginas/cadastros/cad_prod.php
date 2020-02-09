@@ -1,52 +1,37 @@
 <?php
-    include ('conexao/conecta.php');
-?>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Name</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Email Address</label>
-                <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Phone Number</label>
-                <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Message</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <br>
-            <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
-            </div>
-          </form>
-        </div>
-      </div>
+    require ('conexao/conecta.php');
 
+    if(isset($_POST['submit'])){
+      require('restrito/acoes/acao_curso.php');
+    }
+?>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+      <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+      <h2 style="padding-top: 150px">Cadastro de Produto</h2>
+      <form name="formProd" method="post" action="./action/action_produto.php">
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls mb-0 pb-2">
+            <label>Descrição</label>
+            <input class="form-control" id="desc" name="desc" type="text" placeholder="Descrição" required="required" data-validation-required-message="Descreva o produto.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls mb-0 pb-2">
+            <label>Valor</label>
+            <input class="form-control" id="valor" name="valor" type="text" placeholder="Valor" required="required" data-validation-required-message="Valor de compra do produto.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <input type="submit" name="submit" class="btn btn-primary btn-xl" value="Cadastrar">
+        </div>
+        <br>
+      </form>
     </div>
-    </body>
-</html>
+  </div>
+</div>
+
