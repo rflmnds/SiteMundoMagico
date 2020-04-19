@@ -44,6 +44,19 @@
       if($link == 'cadastroprod'){
         include("paginas/cadastros/cad_prod.php");
       }
+      else if($link == 'realizapedidos'){
+        include("paginas/grids/pedidoscli.php");
+      }
+       else if($link == 'pedidos'){
+        include("paginas/grids/pedidosadm.php");
+      }
+      else if($link == 'pagpedido'){
+        include("paginas/grids/pedidos.php");
+      }
+      else if($link == 'pedidofechado'){
+        include("paginas/grids/pedidosfechados.php");
+      }
+
       else{
         include("paginas/content_index.php"); 
       }
