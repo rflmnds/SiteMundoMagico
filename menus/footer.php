@@ -5,8 +5,8 @@
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Endereço</h4>
-          <p class="lead mb-0">Rua Olimpio vieira campos, 490
-            <br>Socomim, Telêmaco Borba - PR</p>
+          <p class="lead mb-0">Rua Olimpio Vieira Campos, 490</p>
+          <p class="lead mb-0">Socomim, Telêmaco Borba - PR</p>
         </div>
 
         <!-- Footer Social Icons -->
