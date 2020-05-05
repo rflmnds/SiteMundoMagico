@@ -103,9 +103,11 @@
         echo "              <img class='img-fluid rounded mb-5' src='img/portfolio/cabin.png' alt=''>";
       }
       echo "              <p class='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>";
+      echo "              <a href='add_imagem.php' class='btn btn-primary' data-dismiss='modal'>Adicionar imagem";
+      echo "              </a>";
       echo "              <button class='btn btn-primary' href='#' data-dismiss='modal'>";
       echo "                <i class='fas fa-times fa-fw'></i>";
-      echo "                Close Window";
+      echo "                Fechar";
       echo "              </button>";
       echo "            </div>";
       echo "          </div>";
