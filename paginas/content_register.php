@@ -1,7 +1,7 @@
 <!-- Registrar -->
 <section class="masthead page-section" id="contact">
     <div class="container">
-
+      
       <!-- Contact Section Heading -->
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registrar-se</h2>
 
