@@ -14,43 +14,42 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <!-- Contact Section Form -->
+      <!-- Formulário de Registro -->
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
+          <form name="registroUsuario" novalidate="novalidate" method="post" action="./action/action_registro.php">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Name</label>
-                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                <label>Nome</label>
+                <input class="form-control" id="nome" name="nome" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor digite seu nome.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Email Address</label>
-                <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                <label>Telefone</label>
+                <input class="form-control" id="telefone" name="telefone" type="text" placeholder="Telefone" required="required" data-validation-required-message="Por favor digite seu número de telefone.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Phone Number</label>
-                <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
+                <label>Email</label>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor digite seu endereço de e-mail.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Message</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                <label>Senha</label>
+                <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Digite sua senha.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Send</button>
+              <button type="submit" class="btn btn-primary btn-xl">Cadastrar-se</button>
             </div>
           </form>
         </div>
