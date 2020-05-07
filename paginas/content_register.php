@@ -1,3 +1,11 @@
+<?php
+    require('./conexao/conecta.php');
+
+    if(isset($_POST['submit'])){
+      require('action/action_registro.php');
+    }
+?>
+
 <!-- Registrar -->
 <section class="masthead page-section" id="contact">
     <div class="container">
@@ -17,7 +25,7 @@
       <!-- Formulário de Registro -->
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form name="registroUsuario" novalidate="novalidate" method="post" action="./action/action_registro.php">
+          <form name="formUsuario" id="contactForm" novalidate="novalidate" method="post">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Nome</label>
@@ -49,7 +57,7 @@
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-xl">Cadastrar-se</button>
+              <button type="submit" name="submit" class="btn btn-primary btn-xl">Cadastrar-se</button>
             </div>
           </form>
         </div>

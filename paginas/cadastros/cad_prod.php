@@ -2,14 +2,14 @@
     require ('conexao/conecta.php');
 
     if(isset($_POST['submit'])){
-      require('restrito/acoes/acao_curso.php');
+      require('/action/action_produto.php');
     }
 ?>
 <div class="row">
     <div class="col-lg-8 mx-auto">
       <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
       <h2 style="padding-top: 150px">Cadastro de Produto</h2>
-      <form name="formProd" method="post" action="./action/action_produto.php">
+      <form name="formProd" method="post">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls mb-0 pb-2">
             <label>Descrição</label>
