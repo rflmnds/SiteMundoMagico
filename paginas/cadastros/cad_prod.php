@@ -2,13 +2,22 @@
     require ('conexao/conecta.php');
 
     if(isset($_POST['submit'])){
-      require('/action/action_produto.php');
+      require('action/action_produto.php');
     }
 ?>
 <div class="row">
     <div class="col-lg-8 mx-auto">
       <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-      <h2 style="padding-top: 150px">Cadastro de Produto</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastro de Produto</h2>
+
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
       <form name="formProd" method="post">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls mb-0 pb-2">

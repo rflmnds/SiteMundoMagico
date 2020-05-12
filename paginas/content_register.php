@@ -11,7 +11,7 @@
     <div class="container">
       
       <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registrar-se</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 page-top">Registrar-se</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">

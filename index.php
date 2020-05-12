@@ -38,7 +38,6 @@
 
   <!-- Conteudo Principal -->
   <?php 
-
     if(isset($_GET['pag'])){
       $link = $_GET['pag'];
       if($link == 'cadastroprod'){
@@ -56,7 +55,9 @@
       else if($link == 'pedidofechado'){
         include("paginas/grids/pedidosfechados.php");
       }
-
+      else if($link == 'imagemItem'){
+        include("paginas/add_imagem.php");
+      }
       else{
         include("paginas/content_index.php"); 
       }
