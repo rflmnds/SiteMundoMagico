@@ -59,7 +59,7 @@
             $result2 = mysqli_query($conn, $sql);
 
             if(mysqli_fetch_array($result2)!= null){
-              echo "    <img class='img-fluid' src='img/portfolio/cabin.png' alt=''>";
+              echo "    <img class='img-fluid' src='" . $img['Endereco'] . "' alt=''>";
             }
             else{
               echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
@@ -99,11 +99,13 @@
       $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
       $result2 = mysqli_query($conn, $sql);
 
-      if(mysqli_fetch_array($result2)!= null){
-        echo "              <img class='img-fluid rounded mb-5' src='img/portfolio/cabin.png' alt=''>";
+      if($img = mysqli_fetch_array($result2)!= null){
+        echo "              <img class='img-fluid rounded mb-5' src='" . $img['Endereco'] . "' alt=''>";
       }
       echo "              <p class='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>";
-      echo "              <a href='add_imagem.php' class='btn btn-primary' data-dismiss='modal'>Adicionar imagem";
+      echo "              <a href='?page=imagemItem&id=" . $item['idItens'] . "' class='btn btn-primary'>";
+      echo "                  <i class='fas fa-image fa-fw'></i>";
+      echo "                  Adicionar imagem";
       echo "              </a>";
       echo "              <button class='btn btn-primary' href='#' data-dismiss='modal'>";
       echo "                <i class='fas fa-times fa-fw'></i>";
