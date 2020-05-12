@@ -58,8 +58,9 @@
             $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
             $result2 = mysqli_query($conn, $sql);
 
-            if(mysqli_fetch_array($result2)!= null){
-              echo "    <img class='img-fluid' src='" . $img['Endereco'] . "' alt=''>";
+            $img = mysqli_fetch_array($result2);
+            if($img != null){
+              echo "    <img class='img-fluid' src='img/uploads/" . $img['Endereco'] . "' alt=''>";
             }
             else{
               echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
@@ -74,7 +75,7 @@
     $sql = "SELECT * FROM itens";
     $result1 = mysqli_query($conn, $sql);
     
-    while($item = mysqli_fetch_array($result1)){      
+    while($item = mysqli_fetch_array($result1)){
       echo "<div class='portfolio-modal modal fade' id='portfolioModal" . $item['idItens'] . "' tabindex='-1' role='dialog' aria-hidden='true'>";
       echo "  <div class='modal-dialog modal-xl' role='document'>";
       echo "    <div class='modal-content'>";
@@ -99,8 +100,9 @@
       $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
       $result2 = mysqli_query($conn, $sql);
 
-      if($img = mysqli_fetch_array($result2)!= null){
-        echo "              <img class='img-fluid rounded mb-5' src='" . $img['Endereco'] . "' alt=''>";
+      $imagem = mysqli_fetch_array($result2);
+      if($imagem != null){
+        echo "              <img class='img-fluid rounded mb-5' src='img/uploads/" . $imagem['Endereco'] . "' alt=''>";
       }
       echo "              <p class='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>";
       echo "              <a href='?pag=imagemItem&id=" . $item['idItens'] . "' class='btn btn-primary'>";

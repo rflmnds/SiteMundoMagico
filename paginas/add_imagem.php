@@ -4,6 +4,10 @@
     if(isset($_POST['submit'])){
       require('action/action_imagem.php');
     }
+    else{
+      $success = null;
+      $mensagem = null;
+    }
 ?>
 <div class="row">
     <div class="col-lg-8 mx-auto">
@@ -18,16 +22,17 @@
         <div class="divider-custom-line"></div>
       </div>
 
-      <form name="formImagem" method="post">
+      <form name="formImagem" method="post" enctype="multipart/form-data">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls mb-0 pb-2">
             <label>Imagem</label>
-            <input class="form-control-file" id="img" name="img" type="file" placeholder="Imagem" required="required" data-validation-required-message="Descreva o produto.">
+            <input class="form-control-file" id="img" name="img" type="file" placeholder="Imagem" required="required">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <br>
-        <div id="success"></div>
+        <div id="danger"><?= $mensagem ?></div>
+        <div id="success"><?= $success ?></div>
         <div class="form-group">
           <input type="submit" name="submit" class="btn btn-primary" value="Adicionar">
         </div>
