@@ -18,7 +18,7 @@
 	VALUES ('$nome', '$telefone', '$email', '$id_usuario')";
     $inserir = mysqli_query($conn, $sql) or die('Falha ao inserir cliente.');
     
- 	$url = "../index.php?pag=prateleira";
+ 	$url = "./index.php#page-top";
 	echo "<script type='text/javascript'>";
 	echo "alert('Registro realizado.');";
 	echo "window.location.replace('$url');";

@@ -104,11 +104,15 @@
       if($imagem != null){
         echo "              <img class='img-fluid rounded mb-5' src='img/uploads/" . $imagem['Endereco'] . "' alt=''>";
       }
-      echo "              <p class='mb-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>";
-      echo "              <a href='?pag=imagemItem&id=" . $item['idItens'] . "' class='btn btn-primary'>";
-      echo "                  <i class='fas fa-image fa-fw'></i>";
-      echo "                  Adicionar imagem";
-      echo "              </a>";
+      echo "              <h2>Valor: R$" . number_format($item['Valor'], 2, ",", ".") . "</h2><br>";
+      if(isset($_SESSION['usuario_tipo'])){
+        if($_SESSION['usuario_tipo'] == 'admin'){
+          echo "              <a href='?pag=imagemItem&id=" . $item['idItens'] . "' class='btn btn-primary'>";
+          echo "                  <i class='fas fa-image fa-fw'></i>";
+          echo "                  Adicionar imagem";
+          echo "              </a>";
+        }
+      }
       echo "              <button class='btn btn-primary' href='#' data-dismiss='modal'>";
       echo "                <i class='fas fa-times fa-fw'></i>";
       echo "                Fechar";

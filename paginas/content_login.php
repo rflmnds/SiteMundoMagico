@@ -4,6 +4,8 @@
   if(isset($_POST['enviar'])){
     require('action/action_login.php');
   }
+
+
 ?>
 
 <!-- Login -->
@@ -42,6 +44,13 @@
             </div>
 
             <br>
+            <div class="text-danger">
+              <?php 
+                if(isset($_SESSION['erro'])) {
+                  echo $_SESSION['erro'];
+                }
+              ?>    
+            </div>
             <div id="success"></div>
             <div class="form-group">
               <a id="registrar" href="?pag=register">Registrar-se</a>

@@ -1,9 +1,9 @@
 <?php
-    require('./conexao/conecta.php');
+  require('./conexao/conecta.php');
 
-    if(isset($_POST['submit'])){
-      require('action/action_registro.php');
-    }
+  if(isset($_POST['submit'])){
+    require('action/action_registro.php');
+  }
 ?>
 
 <!-- Registrar -->
@@ -25,7 +25,7 @@
       <!-- Formulário de Registro -->
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form name="formUsuario" id="contactForm" novalidate="novalidate" method="post">
+          <form name="formUsuario" novalidate="novalidate" method="post">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Nome</label>
