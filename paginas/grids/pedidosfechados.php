@@ -1,7 +1,7 @@
 <?php
 	require('conexao/conecta.php');
 
-    $sql = "SELECT c.Nome, p.idPedido, p.ValorTotal, s.Status from cliente c 
+    echo $sql = "SELECT c.Nome, p.idPedido, p.ValorTotal, s.Status from cliente c 
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.Pedido_idPedido 
                 INNER JOIN itens i ON ip.Itens_idItens = i.idItens
@@ -24,7 +24,6 @@
                 <th>Valor</th>
                 <th>Status</th>
                 <th></th>
-                <th></th>
         </tr>
     <?php
     	while($linha = mysqli_fetch_array($result)){
@@ -35,9 +34,7 @@
                 echo "<td>" . $linha['idPedido'] . "</td>";
                 echo "<td>" . $linha['ValorTotal'] . "</td>";
                 echo "<td>" . $linha['Status'] . "</td>";
-                echo "<td><a href='$url' class='btn btn-success'><span class='glyphicon glyphicon-plus'><span></a></td>";
-                //echo "<td><a href='$url2' class='btn btn-default'><span class='glyphicon glyphicon-edit'><span></a></td>";
-                //echo "<td><a href='$url3' class='btn btn-warning'>Adicionar etapa</a></td>";
+                echo "<td><a href='$url' class='btn btn-success'>Ver Itens<span></a></td>";
                 echo "</tr>";
     	}
     ?>

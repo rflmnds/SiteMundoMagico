@@ -41,7 +41,7 @@
       <!-- Portfolio Grid Items -->
       <div class="row">
 
-        <!-- Portfolio Item 1 -->
+        <!-- Portfolio Itens -->
         <?php
           $sql = "SELECT * FROM itens";
           $result1 = mysqli_query($conn, $sql);
@@ -70,7 +70,7 @@
           }
         ?>
   </section>
-  <!-- Portfolio Modal 1 -->
+  <!-- Portfolio Modals -->
   <?php
     $sql = "SELECT * FROM itens";
     $result1 = mysqli_query($conn, $sql);
@@ -125,4 +125,13 @@
       echo "  </div>";
       echo "</div>";
     }
-  ?>
+
+    if(isset($_SESSION['usuario_tipo'])){
+      if($_SESSION['usuario_tipo'] != 'admin') {
+        include("paginas/contato.php");
+      }
+    }
+    else{
+      include("paginas/contato.php");
+    }
+?>

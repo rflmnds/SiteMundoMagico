@@ -59,7 +59,8 @@
         include("paginas/add_imagem.php");
       }
       else{
-        include("paginas/content_index.php"); 
+        include("paginas/content_index.php");
+        
       }
     }
     else{

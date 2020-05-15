@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-lg-8 mx-auto">
       <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cadastro de Produto</h2>
+      <h2 class="page-top text-center text-uppercase text-secondary mb-0">Cadastro de Produto</h2>
 
       <div class="divider-custom">
         <div class="divider-custom-line"></div>

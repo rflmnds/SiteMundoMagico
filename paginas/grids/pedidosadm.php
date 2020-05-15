@@ -24,7 +24,6 @@
                 <th>Valor</th>
                 <th>Status</th>
                 <th></th>
-                <th></th>
         </tr>
     <?php
     	while($linha = mysqli_fetch_array($result)){
@@ -35,9 +34,7 @@
                 echo "<td>" . $linha['idPedido'] . "</td>";
                 echo "<td>" . $linha['ValorTotal'] . "</td>";
                 echo "<td>" . $linha['Status'] . "</td>";
-                echo "<td><a href='$url' class='btn btn-success'><span class='glyphicon glyphicon-plus'><span></a></td>";
-                //echo "<td><a href='$url2' class='btn btn-default'><span class='glyphicon glyphicon-edit'><span></a></td>";
-                //echo "<td><a href='$url3' class='btn btn-warning'>Adicionar etapa</a></td>";
+                echo "<td><a href='$url' class='btn btn-success'>Ver Itens</a></td>";
                 echo "</tr>";
     	}
     ?>
