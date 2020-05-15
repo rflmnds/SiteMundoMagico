@@ -7,14 +7,14 @@
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 	// Check if image file is a actual image or fake image
-  $check = getimagesize($_FILES["img"]["tmp_name"]);
-  if($check !== false) {
-    $mensagem = "File is an image - " . $check["mime"] . ".";
-    $uploadOk = 1;
-  } else {
-    $mensagem = "File is not an image.";
-    $uploadOk = 0;
-  }
+  	$check = getimagesize($_FILES["img"]["tmp_name"]);
+	if($check !== false) {
+		$mensagem = "File is an image - " . $check["mime"] . ".";
+		$uploadOk = 1;
+	} else {
+		$mensagem = "File is not an image.";
+		$uploadOk = 0;
+	}
 
 	// Check if file already exists
 	if (file_exists($target_file)) {
