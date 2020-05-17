@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mundomagico`.`Status` (
   `idStatus` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
+  `Status` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idStatus`))
 ENGINE = InnoDB;
 
@@ -64,7 +64,6 @@ CREATE TABLE IF NOT EXISTS `mundomagico`.`Itens` (
   `idItens` INT NOT NULL AUTO_INCREMENT,
   `Descricao` VARCHAR(45) NOT NULL,
   `Valor` FLOAT NOT NULL,
-  `Qtd` INT NOT NULL,
   PRIMARY KEY (`idItens`))
 ENGINE = InnoDB;
 
@@ -76,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `mundomagico`.`Pedido` (
   `idPedido` INT NOT NULL AUTO_INCREMENT,
   `idStatus` INT NOT NULL,
   `idCliente` INT NOT NULL,
-  `ValorTotal` FLOAT NOT NULL,
+  `ValorTotal` FLOAT NULL,
   PRIMARY KEY (`idPedido`),
   INDEX `fk_Pedido_Status_idx` (`idStatus` ASC),
   INDEX `fk_Pedido_Cliente1_idx` (`idCliente` ASC),
