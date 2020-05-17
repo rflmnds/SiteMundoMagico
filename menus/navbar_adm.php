@@ -1,9 +1,5 @@
 <?php
-  $active['home'] = '';
-  $active['prateleira'] = '';
-  $active['pedidos'] = '';
-  $active['cadastroprod'] = '';
-  $active['entrar'] = '';
+
 
   if(isset($_GET['pag'])) {
     $active[$_GET['pag']] = 'active';
@@ -21,19 +17,16 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?= $active["home"] ?>" href="?pag=home">INICIO</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="?pag=prateleira#portfolio">PRATELEIRA</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?= $active["prateleira"] ?>" href="?pag=prateleira#portfolio">PRATELEIRA</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="?pag=pedidos">PEDIDOS</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?= $active["pedidos"] ?>" href="?pag=pedidos">PEDIDOS</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="?pag=cadastroprod">CADASTROS</a>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?= $active["cadastroprod"] ?>" href="?pag=cadastroprod">CADASTROS</a>
-        </li>
-        <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger <?= $active["entrar"] ?>" href="logout.php">SAIR</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout.php">SAIR</a>
         </li>
       </ul>
     </div>

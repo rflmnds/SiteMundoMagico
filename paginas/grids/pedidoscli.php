@@ -5,9 +5,10 @@
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.Pedido_idPedido 
                 INNER JOIN itens i ON ip.Itens_idItens = i.idItens
-                INNER JOIN status s ON p.idStatus = s.idStatus";
+                INNER JOIN status s ON p.idStatus = s.idStatus
+                WHERE c.idCliente = " . $_SESSION['usuario_id'];
                 
-	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar servicos');
+	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar cliente');
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
