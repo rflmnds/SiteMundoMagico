@@ -22,7 +22,7 @@
     	$result = mysqli_query($conn, $sql) or die ('Falha ao alterar status');
     }
     else{
-    	$sql = "UPDATE pedido SET ValorTotal = NULL,idStatus = 1 WHERE idPedido = " . $_GET['id'];
+    	echo $sql = "UPDATE pedido SET ValorTotal = NULL, idStatus = 1 WHERE idPedido = " . $_GET['id'];
     	$result = mysqli_query($conn, $sql) or die ('Falha ao alterar status');
     }
     header('Location: ?pag=pagpedido&id=' . $_GET['id']);
