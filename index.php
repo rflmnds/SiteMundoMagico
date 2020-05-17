@@ -50,7 +50,7 @@
         include("paginas/grids/pedidosadm.php");
       }
       else if($link == 'pagpedido'){
-        include("paginas/grids/pedidos.php");
+        include("paginas/grids/itens_pedido.php");
       }
       else if($link == 'pedidofechado'){
         include("paginas/grids/pedidosfechados.php");
