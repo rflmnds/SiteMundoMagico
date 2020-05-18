@@ -1,12 +1,10 @@
 <?php
 	require('conexao/conecta.php');
 
-    $sql = "SELECT c.Nome, p.idPedido, i.Descricao, i.Valor, s.Status from cliente c 
-                INNER JOIN pedido p ON c.idCliente = p.idCliente
-                INNER JOIN itens_has_pedido ip ON p.idPedido = ip.Pedido_idPedido 
-                INNER JOIN itens i ON ip.Itens_idItens = i.idItens
+    echo $sql = "SELECT * from pedido p 
+                INNER JOIN cliente c ON p.idCliente = c.idCliente
                 INNER JOIN status s ON p.idStatus = s.idStatus
-                WHERE c.idCliente = " . $_SESSION['usuario_id'];
+                WHERE c.idCliente = " . $_SESSION['usuario_idCliente'];
                 
 	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar cliente');
 
@@ -31,7 +29,7 @@
             $url = "?pag=pagpedido&id=" . $linha['idPedido']; 
     		echo "<tr>";
             echo "  <td>" . $linha['idPedido'] . "</td>";
-            echo "  <td>" . $linha['Valor'] . "</td>";
+            echo "  <td>" . $linha['ValorTotal'] . "</td>";
             echo "  <td>" . $linha['Status'] . "</td>";
             echo "  <td><a href='$url' class='btn btn-success'>Ver Itens</a></td>";
             echo "</tr>";

@@ -61,6 +61,9 @@
       else if($link == 'novoPedido'){
         include('paginas/grids/add_pedido.php');
       }
+      else if($link == 'itemPedido'){
+        include('paginas/grids/add_itens.php');
+      }
       else{
         include("paginas/content_index.php");
         

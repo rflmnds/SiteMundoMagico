@@ -55,6 +55,13 @@
     	}
     ?>
         <tr>
+            <td colspan="3">
+                <a href="?pag=itemPedido&id=<?= $id ?>" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Adicionar Item
+                </a>
+            </td>
+        </tr>
+        <tr>
             <th>Valor Total:</th>
             <td colspan="5" class="valor-item">
                 <?php
@@ -103,11 +110,18 @@
     <br>
     <?php
         $url = "?pag=pagpedido&id=$nPedido&altera=1";
-        if($status == 3){
-            echo "<a href='$url' class='btn btn-primary'>Entregar pedido</a>";
+        if($_SESSION['usuario_tipo'] == 'cliente'){
+            if($status == 1){
+                echo "<a href='$url' class='btn btn-primary'>Finalizar pedido</a>";
+            }
         }
-        else if($status == 4){
-            echo "<a href='$url' class='btn btn-primary'>Tornar pendente</a>";
+        if($_SESSION['usuario_tipo'] == 'admin'){
+            if($status == 3){
+                echo "<a href='$url' class='btn btn-primary'>Entregar pedido</a>";
+            }
+            else if($status == 4){
+                echo "<a href='$url' class='btn btn-primary'>Tornar pendente</a>";
+            }
         }
     ?>
 </div>
