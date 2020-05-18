@@ -14,15 +14,18 @@
           <h4 class="text-uppercase mb-4">Fale Conosco</h4>
           <p class="lead mb-0">Telefone: (42) 99967-7847</p>
           <br>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <!--<a class="btn btn-outline-light btn-social mx-1" href="#">
             <i class="fab fa-fw fa-facebook-f"></i>
-          </a>
+          </a>-->
         </div>
 
         <!-- Footer About Text -->
         <div class="col-lg-4">
-          <h4 class="text-uppercase mb-4">Sobre Nós</h4>
-          <p class="lead mb-0">Servindo sua família desde 20xx.</p>
+          <h4 class="text-uppercase mb-4">NOSSAS REDES SOCIAIS</h4>
+          <br>
+          <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <i class="fab fa-fw fa-facebook-f"></i>
+          </a>
         </div>
 
       </div>
