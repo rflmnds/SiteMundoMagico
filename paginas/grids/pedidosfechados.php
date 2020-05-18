@@ -1,7 +1,7 @@
 <?php
 	require('conexao/conecta.php');
 
-    echo $sql = "SELECT c.Nome, p.idPedido, p.ValorTotal, s.Status from cliente c 
+    $sql = "SELECT c.Nome, p.idPedido, p.ValorTotal, s.Status from cliente c 
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.idPedido 
                 INNER JOIN itens i ON ip.idItens = i.idItens
@@ -39,5 +39,5 @@
     	}
     ?>
 	</table>
-    <a href="#" class="btn btn-primary">Ver pedidos fechados</a>
+    <a href="?pag=pedidos" class="btn btn-primary">Ver pedidos pendentes</a>
 </div>

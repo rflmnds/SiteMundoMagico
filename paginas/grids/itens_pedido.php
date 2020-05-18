@@ -81,31 +81,33 @@
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <?php
-            $sql = "SELECT * FROM itens i
-                        INNER JOIN itens_has_pedido ip ON ip.idItens = i.idItens
-                        INNER JOIN pedido p ON p.idPedido = ip.idPedido 
-                        WHERE p.idPedido = " . $_GET['id'];
-            $result1 = mysqli_query($conn, $sql);
+        <div class="row">
+            <?php
+                $sql = "SELECT * FROM itens i
+                            INNER JOIN itens_has_pedido ip ON ip.idItens = i.idItens
+                            INNER JOIN pedido p ON p.idPedido = ip.idPedido 
+                            WHERE p.idPedido = " . $_GET['id'];
+                $result1 = mysqli_query($conn, $sql);
 
-            while($item = mysqli_fetch_array($result1)){
-                echo "<div class='col-md-6 col-lg-4'>";
-                echo "  <div class='portfolio-item mx-auto' style='cursor: auto'>";
+                while($item = mysqli_fetch_array($result1)){
+                    echo "<div class='col-md-6 col-lg-4'>";
+                    echo "  <div class='portfolio-item mx-auto' style='cursor: auto'>";
 
-                $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
-                $result2 = mysqli_query($conn, $sql);
+                    $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
+                    $result2 = mysqli_query($conn, $sql);
 
-                $img = mysqli_fetch_array($result2);
-                if($img != null){
-                    echo "    <img class='img-fluid' src='img/uploads/" . $img['Endereco'] . "' alt=''>";
+                    $img = mysqli_fetch_array($result2);
+                    if($img != null){
+                        echo "    <img class='img-fluid' src='img/uploads/" . $img['Endereco'] . "' alt=''>";
+                    }
+                    else{
+                        echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
+                    }
+                    echo "  </div>";
+                    echo "</div>";
                 }
-                else{
-                    echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
-                }
-                echo "  </div>";
-                echo "</div>";
-            }
-        ?>
+            ?>
+        </div>
     </div>
     <br>
     <?php
@@ -113,6 +115,9 @@
         if($_SESSION['usuario_tipo'] == 'cliente'){
             if($status == 1){
                 echo "<a href='$url' class='btn btn-primary'>Finalizar pedido</a>";
+            }
+            else{
+                echo "<a href='?pag=realizapedidos' class='btn btn-primary'>Voltar</a>";
             }
         }
         if($_SESSION['usuario_tipo'] == 'admin'){

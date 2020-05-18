@@ -25,33 +25,29 @@
       <!-- Formulário de Registro -->
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <form name="formUsuario" novalidate="novalidate" method="post">
+          <form name="formUsuario" method="post">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Nome</label>
-                <input class="form-control" id="nome" name="nome" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor digite seu nome.">
-                <p class="help-block text-danger"></p>
+                <input class="form-control" id="nome" name="nome" type="text" placeholder="Nome" required="required">
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Telefone</label>
-                <input class="form-control" id="telefone" name="telefone" type="text" placeholder="Telefone" required="required" data-validation-required-message="Por favor digite seu número de telefone.">
-                <p class="help-block text-danger"></p>
+                <input class="form-control" id="telefone" name="telefone" type="text" placeholder="Telefone" required="required">
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Email</label>
-                <input class="form-control" id="email" name="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor digite seu endereço de e-mail.">
-                <p class="help-block text-danger"></p>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Email" required="required">
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Senha</label>
-                <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Digite sua senha.">
-                <p class="help-block text-danger"></p>
+                <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required="required">
               </div>
             </div>
             <br>
