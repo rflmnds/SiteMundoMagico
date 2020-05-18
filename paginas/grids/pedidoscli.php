@@ -15,7 +15,7 @@
         echo $id; 
     }
 ?>
-<div class="container" style="padding-top: 150px">
+<div class="container" style="padding-top: 150px; padding-bottom: 100px">
     <h2>Pedidos</h2>
 	<table class="table table-hover" id="myTable">
 		 <tr>
@@ -24,19 +24,19 @@
                 <th>Status</th>
                 <th>Itens do pedido</th>
                 <th></th>
-                <th></th>
         </tr>
     <?php
     	while($linha = mysqli_fetch_array($result)){
             $pag = $_GET['pag'];
-            //$url = "?pag=pagcad&id=" . $linha['idservico']; Link p botão
+            $url = "?pag=pagpedido&id=" . $linha['idPedido']; 
     		echo "<tr>";
-                echo "<td>" . $linha['idPedido'] . "</td>";
-                echo "<td>" . $linha['Valor'] . "</td>";
-                echo "<td>" . $linha['Status'] . "</td>";
-                //echo "<td><a href='$url' class='btn btn-success'><span class='glyphicon glyphicon-plus'><span></a></td>";
-                echo "</tr>";
+            echo "  <td>" . $linha['idPedido'] . "</td>";
+            echo "  <td>" . $linha['Valor'] . "</td>";
+            echo "  <td>" . $linha['Status'] . "</td>";
+            echo "  <td><a href='$url' class='btn btn-success'>Ver Itens</a></td>";
+            echo "</tr>";
     	}
     ?>
 	</table>
+    <a href="?pag=novoPedido" class="btn btn-primary">Novo pedido</a>
 </div>

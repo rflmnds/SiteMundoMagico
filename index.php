@@ -58,6 +58,9 @@
       else if($link == 'imagemItem'){
         include("paginas/add_imagem.php");
       }
+      else if($link == 'novoPedido'){
+        include('paginas/grids/add_pedido.php');
+      }
       else{
         include("paginas/content_index.php");
         

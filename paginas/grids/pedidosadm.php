@@ -16,7 +16,7 @@
     }
 ?>
 <div class="container" style="padding-top: 150px ; padding-bottom: 100px">
-    <h2>Pedidos abertos</h2>
+    <h2>Pedidos pendentes</h2>
 	<table class="table table-hover" id="myTable">
 		 <tr>
                 <th>Cliente</th>
@@ -39,5 +39,5 @@
     	}
     ?>
 	</table>
-    <a href="?pag=pedidofechado" class="btn btn-primary">Ver pedidos fechados</a>
+    <a href="?pag=pedidofechado" class="btn btn-primary">Ver pedidos entregues</a>
 </div>

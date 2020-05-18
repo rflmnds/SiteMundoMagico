@@ -39,6 +39,7 @@
             $cliente = mysqli_fetch_array($result);
 
             $_SESSION['usuario_id'] = $cliente['idUsuario'];
+            $_SESSION['usuario_idCliente'] = $cliente['idCliente'];
             $_SESSION['usuario_nome'] = $cliente['Nome'];
             header('Location: index.php');
         }
