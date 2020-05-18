@@ -4,7 +4,7 @@
     session_start();
 
     $login = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = md5 ($_POST['senha']);
 
     $sql = "SELECT * FROM usuario WHERE Login = '$login' and Senha = '$senha'";
     $result = mysqli_query($conn,$sql) or die('Falha ao buscar dados do cliente');
