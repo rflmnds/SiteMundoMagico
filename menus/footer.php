@@ -23,7 +23,7 @@
         <div class="col-lg-4">
           <h4 class="text-uppercase mb-4">NOSSAS REDES SOCIAIS</h4>
           <br>
-          <a class="btn btn-outline-light btn-social mx-1" href="#">
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/mundomagicopapelarroz">
             <i class="fab fa-fw fa-facebook-f"></i>
           </a>
         </div>
