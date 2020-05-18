@@ -17,8 +17,8 @@
 
     $sql = "SELECT c.Nome, p.idPedido, i.Descricao, i.Valor, ip.Qtd from cliente c 
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
-                INNER JOIN itens_has_pedido ip ON p.idPedido = ip.Pedido_idPedido 
-                INNER JOIN itens i ON ip.Itens_idItens = i.idItens
+                INNER JOIN itens_has_pedido ip ON p.idPedido = ip.idPedido 
+                INNER JOIN itens i ON ip.idItens = i.idItens
                 INNER JOIN status s ON p.idStatus = s.idStatus
                 WHERE p.idPedido = " . $_GET['id'];
                 
@@ -116,10 +116,10 @@
             }
         }
         if($_SESSION['usuario_tipo'] == 'admin'){
-            if($status == 3){
+            if($status == 2){
                 echo "<a href='$url' class='btn btn-primary'>Entregar pedido</a>";
             }
-            else if($status == 4){
+            else if($status == 3){
                 echo "<a href='$url' class='btn btn-primary'>Tornar pendente</a>";
             }
         }
