@@ -18,7 +18,7 @@
 	VALUES ('$nome', '$telefone', '$email', '$id_usuario')";
     $inserir = mysqli_query($conn, $sql) or die('Falha ao inserir cliente.');
     
- 	$url = "./index.php#page-top";
+ 	$url = "./login.php";
 	echo "<script type='text/javascript'>";
 	echo "alert('Registro realizado.');";
 	echo "window.location.replace('$url');";
