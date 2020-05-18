@@ -83,9 +83,9 @@
         </div>
         <?php
             $sql = "SELECT * FROM itens i
-                        INNER JOIN itens_has_pedido ip ON ip.Itens_idItens = i.idItens
-                        INNER JOIN pedido p ON p.idPedido = ip.Pedido_idPedido 
-                        WHERE idPedido = " . $_GET['id'];
+                        INNER JOIN itens_has_pedido ip ON ip.idItens = i.idItens
+                        INNER JOIN pedido p ON p.idPedido = ip.idPedido 
+                        WHERE p.idPedido = " . $_GET['id'];
             $result1 = mysqli_query($conn, $sql);
 
             while($item = mysqli_fetch_array($result1)){

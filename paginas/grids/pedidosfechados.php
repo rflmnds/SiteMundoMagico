@@ -5,7 +5,7 @@
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.idPedido 
                 INNER JOIN itens i ON ip.idItens = i.idItens
-                INNER JOIN status s ON p.idStatus = s.idStatus WHERE s.idStatus = '2'
+                INNER JOIN status s ON p.idStatus = s.idStatus WHERE s.idStatus = '3'
                 GROUP BY p.idPedido";
                 
 	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar servicos');
