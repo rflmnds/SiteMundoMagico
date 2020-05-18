@@ -103,11 +103,11 @@
     <br>
     <?php
         $url = "?pag=pagpedido&id=$nPedido&altera=1";
-        if($status == 2){
-            echo "<a href='$url' class='btn btn-primary'>Reabrir pedido</a>";
+        if($status == 3){
+            echo "<a href='$url' class='btn btn-primary'>Entregar pedido</a>";
         }
-        else{
-            echo "<a href='$url' class='btn btn-primary'>Fechar pedido</a>";
+        else if($status == 4){
+            echo "<a href='$url' class='btn btn-primary'>Tornar pendente</a>";
         }
     ?>
 </div>
