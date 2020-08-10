@@ -62,15 +62,31 @@ INSERT INTO `mundomagico`.`Status` (`idStatus`,`Status`) VALUES
 (2, 'Pendente'),
 (3, 'Entregue');
 
+-- -----------------------------------------------------
+-- Table `mundomagico`.`Tipo_itens`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mundomagico`.`Tipo_itens` (
+  `idTipoItem` INT NOT NULL AUTO_INCREMENT,
+  `DescricaoTipo` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idTipoItem`))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `mundomagico`.`Itens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mundomagico`.`Itens` (
   `idItens` INT NOT NULL AUTO_INCREMENT,
-  `Descricao` VARCHAR(45) NOT NULL,
+  `DescricaoItem` VARCHAR(45) NOT NULL,
   `Valor` FLOAT NOT NULL,
-  PRIMARY KEY (`idItens`))
+  `idTipoItem` INT NOT NULL,
+  PRIMARY KEY (`idItens`),
+  INDEX `fk_Itens_Tipo_Itens_idx` (`idTipoItem` ASC),
+  CONSTRAINT `fk_Itens_Tipo_Itens_idx`
+    FOREIGN KEY (`idTipoItem`)
+    REFERENCES `mundomagico`.`Tipo_itens` (`idTipoItem`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -84,13 +100,13 @@ CREATE TABLE IF NOT EXISTS `mundomagico`.`Pedido` (
   `ValorTotal` FLOAT NULL,
   PRIMARY KEY (`idPedido`),
   INDEX `fk_Pedido_Status_idx` (`idStatus` ASC),
-  INDEX `fk_Pedido_Cliente1_idx` (`idCliente` ASC),
+  INDEX `fk_Pedido_Cliente_idx` (`idCliente` ASC),
   CONSTRAINT `fk_Pedido_Status`
     FOREIGN KEY (`idStatus`)
     REFERENCES `mundomagico`.`Status` (`idStatus`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Pedido_Cliente1`
+  CONSTRAINT `fk_Pedido_Cliente`
     FOREIGN KEY (`idCliente`)
     REFERENCES `mundomagico`.`Cliente` (`idCliente`)
     ON DELETE NO ACTION
