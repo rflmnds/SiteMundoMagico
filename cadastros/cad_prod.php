@@ -3,7 +3,7 @@
 
     if(isset($_POST['submit'])){
       require('action/action_produto.php');
-    }
+    };
 
     $result = "SELECT * FROM tipo_itens";
     $result_tipo = mysqli_query($conn, $result) or die ('Falha ao buscar tipo do produto');
@@ -40,7 +40,7 @@
         <div class="control-group">
           <div class="form-group floating-label-form-group controls mb-0 pb-2">  
           <label>Tipo do produto</label>
-          <select name="select" class="form-control" required="required" data-validation-required-message="Por favor, escolha uma opção valida.">
+          <select name="idTipoItem" id="idTipoItem" class="form-control" required="required" data-validation-required-message="Por favor, escolha uma opção valida.">
             <?php
                 while($tipo = mysqli_fetch_array($result_tipo)){
                 echo "<option value='" . $tipo['idTipoItem'];

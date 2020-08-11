@@ -3,8 +3,9 @@
 
 	$desc = $_POST['desc'];
 	$valor = $_POST['valor'];
+	$idTipoItem = $_POST['idTipoItem'];
 	
- 	$sql = "INSERT INTO itens(Descricao, Valor) VALUES ('$desc', '$valor')";
+ 	$sql = "INSERT INTO itens(DescricaoItem, Valor, idTipoItem) VALUES ('$desc', '$valor', '$idTipoItem')";
     $inserir = mysqli_query($conn, $sql) or die('Falha ao inserir produto.');
     
     $url = "index.php?pag=prateleira";
