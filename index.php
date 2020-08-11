@@ -64,6 +64,9 @@
       else if($link == 'itemPedido'){
         include('paginas/grids/add_itens.php');
       }
+      else if($link == 'CadastroTipo'){
+        include('paginas/cadastros/cad_tipo.php');
+      }
       else{
         include("paginas/content_index.php");
         
