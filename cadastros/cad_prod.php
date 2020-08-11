@@ -33,6 +33,7 @@
           <div class="form-group floating-label-form-group controls mb-0 pb-2">
             <label>Valor</label>
             <input class="form-control" id="valor" name="valor" type="text" placeholder="Valor" required="required" data-validation-required-message="Valor de compra do produto.">
+            
             <p class="help-block text-danger"></p>
           </div>
         </div>
@@ -52,9 +53,13 @@
         </div>
 
         <br>
+       <div class="form-group">
+            <a id="registrar" href="?pag=CadastroTipo">Cadastrar um novo tipo de produto</a>
+       </div>
+        
         <div id="success"></div>
         <div class="form-group">
-          <input type="submit" name="submit" class="btn btn-primary btn-xl" value="Cadastrar">
+          <center><input type="submit" name="submit" class="btn btn-primary btn-xl" value="Cadastrar"></center>
         </div>
         <br>
       </form>
