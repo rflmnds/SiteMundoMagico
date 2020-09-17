@@ -1,7 +1,7 @@
 <?php
 	require('conexao/conecta.php');
 
-    $sql = "SELECT c.Nome, p.idPedido, p.ValorTotal, s.Status from cliente c 
+    $sql = "SELECT c.NomeCLiente, p.idPedido, p.ValorTotal, s.Status from cliente c 
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.idPedido 
                 INNER JOIN itens i ON ip.idItens = i.idItens

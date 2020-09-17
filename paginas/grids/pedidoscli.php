@@ -1,7 +1,7 @@
 <?php
 	require('conexao/conecta.php');
 
-    echo $sql = "SELECT * from pedido p 
+    $sql = "SELECT * from pedido p 
                 INNER JOIN cliente c ON p.idCliente = c.idCliente
                 INNER JOIN status s ON p.idStatus = s.idStatus
                 WHERE c.idCliente = " . $_SESSION['usuario_idCliente'];
