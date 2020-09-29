@@ -4,6 +4,9 @@
     if(isset($_POST['submit'])){
       require('action/action_produto.php');
     }
+
+    $result = "SELECT * FROM tipo_itens";
+    $result_tipo = mysqli_query($conn, $result) or die ('Falha ao buscar tipo do produto');
 ?>
 <div class="row">
     <div class="col-lg-8 mx-auto">
@@ -30,13 +33,33 @@
           <div class="form-group floating-label-form-group controls mb-0 pb-2">
             <label>Valor</label>
             <input class="form-control" id="valor" name="valor" type="text" placeholder="Valor" required="required" data-validation-required-message="Valor de compra do produto.">
+            
             <p class="help-block text-danger"></p>
           </div>
         </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls mb-0 pb-2">  
+          <label>Tipo do produto</label>
+          <select name="idTipoItem" id="idTipoItem" class="form-control" required="required" data-validation-required-message="Por favor, escolha uma opção valida.">
+            <option value="" selected="true">Tipo</option>
+            <?php
+              while($tipo = mysqli_fetch_array($result_tipo)){
+              echo "<option value='" . $tipo['idTipoItem'] . "'>" . $tipo['DescricaoTipo'] . "</option>";
+              }
+            ?>
+          </select>
+          </div>
+        </div>
+
         <br>
+       <div class="form-group">
+            <a id="registrar" href="?pag=CadastroTipo">Cadastrar um novo tipo de produto</a>
+       </div>
+        
         <div id="success"></div>
         <div class="form-group">
-          <input type="submit" name="submit" class="btn btn-primary btn-xl" value="Cadastrar">
+          <center><input type="submit" name="submit" class="btn btn-primary btn-xl" value="Cadastrar"></center>
         </div>
         <br>
       </form>
