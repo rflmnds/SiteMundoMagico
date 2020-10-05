@@ -4,8 +4,6 @@
   if(isset($_POST['enviar'])){
     require('action/action_login.php');
   }
-
-
 ?>
 
 <!-- Login -->

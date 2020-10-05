@@ -40,7 +40,8 @@
 
             $_SESSION['usuario_id'] = $cliente['idUsuario'];
             $_SESSION['usuario_idCliente'] = $cliente['idCliente'];
-            $_SESSION['usuario_nome'] = $cliente['Nome'];
+            $_SESSION['usuario_nome'] = $cliente['NomeCliente'];
+            $_SESSION['carrinho'] = array();
             header('Location: index.php');
         }
     }

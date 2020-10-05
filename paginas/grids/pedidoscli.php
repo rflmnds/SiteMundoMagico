@@ -14,7 +14,7 @@
     }
 ?>
 <div class="container" style="padding-top: 150px; padding-bottom: 100px">
-    <h2>Pedidos</h2>
+    <h2>Histórico de Pedidos</h2>
 	<table class="table table-hover" id="myTable">
 		 <tr>
                 <th>Nº de pedido</th>
@@ -36,5 +36,4 @@
     	}
     ?>
 	</table>
-    <a href="?pag=novoPedido" class="btn btn-primary">Novo pedido</a>
 </div>
