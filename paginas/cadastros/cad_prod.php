@@ -39,16 +39,16 @@
         </div>
 
         <div class="control-group">
-          <div class="form-group floating-label-form-group controls mb-0 pb-2">  
-          <label>Tipo do produto</label>
-          <select name="idTipoItem" id="idTipoItem" class="form-control" required="required" data-validation-required-message="Por favor, escolha uma opção valida.">
-            <option value="" selected="true">Tipo</option>
-            <?php
-              while($tipo = mysqli_fetch_array($result_tipo)){
-              echo "<option value='" . $tipo['idTipoItem'] . "'>" . $tipo['DescricaoTipo'] . "</option>";
-              }
-            ?>
-          </select>
+          <div class="form-group floating-label-form-group controls mb-0 pb-2">
+            <label>Tipo do produto</label>
+            <select name="idTipoItem" id="idTipoItem" class="form-control" required="required" data-validation-required-message="Por favor, escolha uma opção valida.">
+              <option value="" selected="true">Tipo</option>
+              <?php
+                while($tipo = mysqli_fetch_array($result_tipo)){
+                echo "<option value='" . $tipo['idTipoItem'] . "'>" . $tipo['DescricaoTipo'] . "</option>";
+                }
+              ?>
+            </select>
           </div>
         </div>
 

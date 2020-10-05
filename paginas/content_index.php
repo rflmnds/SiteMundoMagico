@@ -63,7 +63,7 @@
               echo "    <img class='img-fluid' src='img/uploads/" . $img['Endereco'] . "' alt=''>";
             }
             else{
-              echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
+              echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['DescricaoItem'] . "</p>";
             }
             echo "  </div>";
             echo "</div>";
@@ -87,16 +87,8 @@
       echo "      <div class='modal-body text-center'>";
       echo "        <div class='container'>";
       echo "          <div class='row justify-content-center'>";
-      echo "            <div class='col-lg-8'>";
-      echo "              <h2 class='portfolio-modal-title text-secondary text-uppercase mb-0'>" . $item['Descricao'] . "</h2>";
-      echo "              <div class='divider-custom'>";
-      echo "                <div class='divider-custom-line'></div>";
-      echo "                <div class='divider-custom-icon'>";
-      echo "                  <i class='fas fa-birthday-cake'></i>";
-      echo "                </div>";
-      echo "                <div class='divider-custom-line'></div>";
-      echo "              </div>";
-
+      echo "            <div class='col'>";
+  
       $sql = "SELECT * FROM foto WHERE idItens = " . $item['idItens'];
       $result2 = mysqli_query($conn, $sql);
 
@@ -104,19 +96,38 @@
       if($imagem != null){
         echo "              <img class='img-fluid rounded mb-5' src='img/uploads/" . $imagem['Endereco'] . "' alt=''>";
       }
-      echo "              <h2>Valor: R$" . number_format($item['Valor'], 2, ",", ".") . "</h2><br>";
+      else{
+        echo "              <p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9' class='rounded'>Sem imagem</p>";
+      }
+      echo "            </div>";
+      echo "            <div class='col'>";
+      echo "              <h2 class='portfolio-modal-title text-secondary text-uppercase mb-0'>" . $item['DescricaoItem'] . "</h2>";
+      echo "              <div class='divider-custom'>";
+      echo "                <div class='divider-custom-line'></div>";
+      echo "                <div class='divider-custom-icon'>";
+      echo "                  <i class='fas fa-birthday-cake'></i>";
+      echo "                </div>";
+      echo "                <div class='divider-custom-line'></div>";
+      echo "              </div>";
+      echo "              <h2>R$" . number_format($item['Valor'], 2, ",", ".") . "</h2><br>";
       if(isset($_SESSION['usuario_tipo'])){
         if($_SESSION['usuario_tipo'] == 'admin'){
           echo "              <a href='?pag=imagemItem&id=" . $item['idItens'] . "' class='btn btn-primary'>";
           echo "                  <i class='fas fa-image fa-fw'></i>";
           echo "                  Adicionar imagem";
           echo "              </a>";
+          echo "              <a href='?pag=cadastroprod&id=" . $item['idItens'] . "' class='btn btn-primary'>";
+          echo "                  <i class='fas fa-edit'></i>";
+          echo "                  Editar produto";
+          echo "              </a>";
+        }
+        else{
+          echo "              <a href='?pag=carrinho&id=" . $item['idItens'] . "' class='btn btn-primary'>";
+          echo "                  <i class='fas fa-edit'></i>";
+          echo "                  Adicionar ao carrinho";
+          echo "              </a>";
         }
       }
-      echo "              <button class='btn btn-primary' href='#' data-dismiss='modal'>";
-      echo "                <i class='fas fa-times fa-fw'></i>";
-      echo "                Fechar";
-      echo "              </button>";
       echo "            </div>";
       echo "          </div>";
       echo "        </div>";
