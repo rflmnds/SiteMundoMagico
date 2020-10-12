@@ -1,0 +1,1 @@
+Aqui ficam os uploads de imagem de produto.
