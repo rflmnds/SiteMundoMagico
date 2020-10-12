@@ -34,7 +34,7 @@
           </div>
         </li>
         <li class="nav-item mx-0 mx-lg-1">
-          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.php#contact"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+          <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="?pag=carrinho"><i class="fas fa-shopping-cart"></i> Carrinho</a>
         </li>
       </ul>
     </div>

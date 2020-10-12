@@ -85,6 +85,9 @@
       else if($link == 'CadastroTipo'){
         include('paginas/cadastros/cad_tipo.php');
       }
+      else if($link == 'carrinho'){
+        include('paginas/grids/carrinho.php');
+      }
       else{
         include("paginas/content_index.php");
         

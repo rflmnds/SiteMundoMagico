@@ -42,6 +42,22 @@
             $_SESSION['usuario_idCliente'] = $cliente['idCliente'];
             $_SESSION['usuario_nome'] = $cliente['NomeCliente'];
             $_SESSION['carrinho'] = array();
+
+            $sql = "SELECT * FROM pedido WHERE idCliente = " . $cliente['idCliente'];
+            $result = mysqli_query($conn, $sql) or die ('Falha ao verificar carrinho');
+            $cart = mysqli_fetch_array($result);
+
+            if(isset($cart)){
+                if($cart['idStatus'] != 1){
+                    $sql = "INSERT INTO pedido(idStatus, idCliente, ValorTotal) VALUES (1, " . $cliente['idCliente'] . ", 0)";
+                    $inserir = mysqli_query($conn, $sql) or die('Falha ao criar novo carrinho');
+                }
+            }
+            else{
+                $sql = "INSERT INTO pedido(idStatus, idCliente, ValorTotal) VALUES (1, " . $cliente['idCliente'] . ", 0)";
+                $inserir = mysqli_query($conn, $sql) or die('Falha ao criar novo carrinho');
+            }
+
             header('Location: index.php');
         }
     }

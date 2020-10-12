@@ -6,12 +6,11 @@
     $sql = "SELECT c.NomeCliente, p.idPedido, s.idStatus from cliente c 
                 INNER JOIN pedido p ON c.idCliente = p.idCliente
                 INNER JOIN status s ON p.idStatus = s.idStatus
-                WHERE p.idPedido = " . $_GET['id'];
-
-    $result = mysqli_query($conn, $sql) or die ('Falha ao buscar dados');
+                WHERE p.idStatus = 1 AND p.idCliente = " . $_SESSION['usuario_idCliente'];
+    $result = mysqli_query($conn, $sql) or die ('Falha ao buscar dados do pedido');
     $pedido = mysqli_fetch_array($result);
 
-    $nomeCliente = $pedido['Nome'];
+    $nomeCliente = $pedido['NomeCliente'];
     $nPedido = $pedido['idPedido'];
     $status = $pedido['idStatus'];
 
@@ -20,20 +19,12 @@
                 INNER JOIN itens_has_pedido ip ON p.idPedido = ip.idPedido 
                 INNER JOIN itens i ON ip.idItens = i.idItens
                 INNER JOIN status s ON p.idStatus = s.idStatus
-                WHERE p.idPedido = " . $_GET['id'];
-                
-	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar dados');
-
-    if(isset($_GET['id'])){
-        $id = $_GET['id']; 
-    }
-
-    if(isset($_GET['altera'])){
-        include("action/altera_status.php");
-    }
+                WHERE p.idStatus = 1 AND p.idCliente = " . $_SESSION['usuario_idCliente'];              
+	$result = mysqli_query($conn, $sql) or die ('Falha ao buscar dados dos itens');
 ?>
+
 <div class="container" style="padding-top: 150px; padding-bottom: 100px">
-    <?= "<h2>Pedido Nº $nPedido - Cliente: $nomeCliente</h2>"; ?>
+    <?= "<h2>Carrinho (Pedido Nº $nPedido)</h2>"; ?>
 	<table class="table table-hover" id="myTable">
 		 <tr>
                 <th>Itens</th>
@@ -56,9 +47,7 @@
     ?>
         <tr>
             <td colspan="3">
-                <a href="?pag=itemPedido&id=<?= $id ?>" class="btn btn-primary">
-                    <i class="fas fa-plus"></i> Adicionar Item
-                </a>
+                
             </td>
         </tr>
         <tr>
@@ -86,7 +75,7 @@
                 $sql = "SELECT * FROM itens i
                             INNER JOIN itens_has_pedido ip ON ip.idItens = i.idItens
                             INNER JOIN pedido p ON p.idPedido = ip.idPedido 
-                            WHERE p.idPedido = " . $_GET['id'];
+                            WHERE p.idStatus = 1 AND p.idCliente = " . $_SESSION['usuario_idCliente'];  
                 $result1 = mysqli_query($conn, $sql);
 
                 while($item = mysqli_fetch_array($result1)){
@@ -110,23 +99,20 @@
         </div>
     </div>
     <br>
-    <?php
-        $url = "?pag=pagpedido&id=$nPedido&altera=1";
-        if($_SESSION['usuario_tipo'] == 'cliente'){
-            if($status == 1){
-                echo "<a href='$url' class='btn btn-primary'>Finalizar pedido</a>";
-            }
-            else{
-                echo "<a href='?pag=realizapedidos' class='btn btn-primary'>Voltar</a>";
-            }
-        }
-        if($_SESSION['usuario_tipo'] == 'admin'){
-            if($status == 2){
-                echo "<a href='$url' class='btn btn-primary'>Entregar pedido</a>";
-            }
-            else if($status == 3){
-                echo "<a href='$url' class='btn btn-primary'>Tornar pendente</a>";
-            }
-        }
-    ?>
+    <div class="row">
+        <div class="col">
+            <a href="index.php#prateleira" class="btn btn-primary"> Continuar comprando</a>
+        </div>
+        <div class="col" style="text-align: right;">
+            <?php
+                $url = "?pag=pagpedido&id=$nPedido&altera=1";
+                if($status == 1){
+                    echo "<a href='$url' class='btn btn-primary' >Finalizar pedido</a>";
+                }
+                else{
+                    echo "<a href='?pag=realizapedidos' class='btn btn-primary'>Voltar</a>";
+                }
+            ?>
+        </div>
+    </div>
 </div>
