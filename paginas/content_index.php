@@ -122,7 +122,7 @@
           echo "              </a>";
         }
         else{
-          echo "              <a href='?pag=carrinho&id=" . $item['idItens'] . "' class='btn btn-primary'>";
+          echo "              <a href='?pag=itemPedido&id=" . $item['idItens'] . "' class='btn btn-primary'>";
           echo "                  <i class='fas fa-edit'></i>";
           echo "                  Adicionar ao carrinho";
           echo "              </a>";

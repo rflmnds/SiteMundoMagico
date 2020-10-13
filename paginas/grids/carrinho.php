@@ -36,7 +36,7 @@
             $pag = $_GET['pag'];
             $url = "?pag=pagcad&id=" . $linha['idPedido']; 
     		echo "<tr>";
-            echo "  <td>" . $linha['Descricao'] . "</td>";
+            echo "  <td>" . $linha['DescricaoItem'] . "</td>";
             echo "  <td>" . $linha['Qtd'] . "</td>";
             echo "  <td class='valor-item'>R$" . number_format($linha['Valor'], 2, ",", ".") . "</td>";
 
@@ -45,11 +45,6 @@
             echo "</tr>";
     	}
     ?>
-        <tr>
-            <td colspan="3">
-                
-            </td>
-        </tr>
         <tr>
             <th>Valor Total:</th>
             <td colspan="5" class="valor-item">
@@ -90,29 +85,23 @@
                         echo "    <img class='img-fluid' src='img/uploads/" . $img['Endereco'] . "' alt=''>";
                     }
                     else{
-                        echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['Descricao'] . "</p>";
+                        echo "<p style='margin: 0; padding: 115px; font-weight: bold; text-align: center; background-color: #A9A9A9'>" . $item['DescricaoItem'] . "</p>";
                     }
                     echo "  </div>";
                     echo "</div>";
                 }
+
+                $urlCompra = "?pag=finalizapedido&id=" . $nPedido;
             ?>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col">
-            <a href="index.php#prateleira" class="btn btn-primary"> Continuar comprando</a>
+            <a href="index.php#prateleira" class="btn btn-primary">Continuar comprando</a>
         </div>
         <div class="col" style="text-align: right;">
-            <?php
-                $url = "?pag=pagpedido&id=$nPedido&altera=1";
-                if($status == 1){
-                    echo "<a href='$url' class='btn btn-primary' >Finalizar pedido</a>";
-                }
-                else{
-                    echo "<a href='?pag=realizapedidos' class='btn btn-primary'>Voltar</a>";
-                }
-            ?>
+            <a href='<?= $urlCompra ?>' class='btn btn-primary'>Finalizar pedido</a>
         </div>
     </div>
 </div>

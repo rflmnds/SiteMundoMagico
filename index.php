@@ -88,6 +88,9 @@
       else if($link == 'carrinho'){
         include('paginas/grids/carrinho.php');
       }
+      else if($link == 'finalizapedido'){
+        include('paginas/finalizapedido.php');
+      }
       else{
         include("paginas/content_index.php");
         
